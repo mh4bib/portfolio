@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import {
   AppBar,
   Box,
@@ -21,9 +21,10 @@ import {
   ListItemButton,
   ListItemText,
   CssBaseline,
+  useScrollTrigger,
+  Slide,
 } from "@mui/material";
 import { Adb, Menu as MenuIcon } from "@mui/icons-material";
-import SearchBar from "./SearchBar";
 import Link from "next/link";
 
 const routeOptions: { label: string; href: string }[] = [
@@ -39,6 +40,7 @@ const userOptions: { label: string; href: string }[] = [
 
 function ResponsiveAppBar() {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [isTop, setIsTop] = useState(true);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false); //remove it when implementing authentication
 
@@ -54,9 +56,16 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
-  const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
+  const trigger = useScrollTrigger();
+
+  const changeNavbarColor = () => {
+    if (window.scrollY >= 100) {
+      setIsTop(false);
+    } else {
+      setIsTop(true);
+    }
   };
+  window.addEventListener("scroll", changeNavbarColor);
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
@@ -64,10 +73,6 @@ function ResponsiveAppBar() {
         MUI
       </Typography>
       <Divider />
-      <SearchBar
-        handleSearch={handleSearch}
-        sxProp={{ border: 1, borderRadius: 1, marginX: 1 }}
-      />
       <List onClick={handleDrawerToggle}>
         {routeOptions.map(({ label, href }) => (
           <Link key={label} href={href}>
@@ -83,7 +88,14 @@ function ResponsiveAppBar() {
   );
 
   return (
-    <AppBar position="sticky" component="nav">
+    <Slide appear={false} direction="down" in={!trigger}>
+    <AppBar
+      position="sticky"
+      component="nav"
+      sx={{ backgroundColor: "#6c65ff" }}
+      elevation={isTop ? 0 : 4}
+      // color={trigger ? "#6c65ff" : "transparent"}
+    >
       <CssBaseline />
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -155,7 +167,7 @@ function ResponsiveAppBar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            LOGO.
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {routeOptions.map(({ label, href }) => (
@@ -170,12 +182,7 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <SearchBar
-            handleSearch={handleSearch}
-            sxProp={{ mx: 2, display: { xs: "none", md: "flex" } }}
-          />
-
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="user options">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar />
@@ -216,10 +223,11 @@ function ResponsiveAppBar() {
                 </MenuItem>,
               ]}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
+    </Slide>
   );
 }
 export default ResponsiveAppBar;

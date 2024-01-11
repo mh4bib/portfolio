@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/Navbar";
+import HeroSection from "@/components/ui/Hero";
 import { Container, CssBaseline } from "@mui/material";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Navbar />
       <CssBaseline />
+      <HeroSection />
       <Container maxWidth="lg">
         {[...Array(20)].map((_, index) => (
           <p key={index}>
