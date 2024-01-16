@@ -52,6 +52,7 @@ const ContactMe = () => {
           sx={{
             width: { xs: "100%", sm: "70%", md: "700px" },
             textAlign: "center",
+            mx: 2,
           }}
           // bgcolor={"blueviolet"}
         >

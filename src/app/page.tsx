@@ -1,3 +1,4 @@
+import CheckoutResume from "@/components/CheckoutResume";
 import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/Navbar";
@@ -11,7 +12,7 @@ export default function Home() {
       <CssBaseline />
       <HeroSection />
       <Container maxWidth="lg">
-        {[...Array(20)].map((_, index) => (
+        {[...Array(10)].map((_, index) => (
           <p key={index}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
             harum distinctio mollitia necessitatibus! Praesentium, deserunt ea
@@ -21,6 +22,7 @@ export default function Home() {
           </p>
         ))}
       </Container>
+      <CheckoutResume />
       <ContactMe />
       <Footer />
     </main>
