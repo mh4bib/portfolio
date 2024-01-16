@@ -8,7 +8,7 @@ const HeroSection = () => {
       container
       sx={{ overflowX: "hidden", marginTop: "-3px" }}
       maxWidth={"xl"}
-      mx={"auto"} /*  bgcolor={"aqua"} */
+      mx={"auto"}
     >
       <Grid
         item
@@ -47,11 +47,11 @@ const HeroSection = () => {
       </Grid>
       <Box
         bgcolor="#6c65ff"
-        height={"350px"}
+        height={"150px"}
         width={"200%"}
-        marginLeft={"-50px"}
-        marginRight={"-50px"}
-        marginTop={"-220px"}
+        marginLeft={"-80px"}
+        marginRight={"-80px"}
+        marginTop={"-90px"}
         zIndex="1"
         sx={{ borderRadius: "50%" }}
       />

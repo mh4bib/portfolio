@@ -59,13 +59,16 @@ function ResponsiveAppBar() {
   const trigger = useScrollTrigger();
 
   const changeNavbarColor = () => {
-    if (window.scrollY >= 100) {
+    if (typeof window !== "undefined" && window.scrollY >= 100) {
       setIsTop(false);
     } else {
       setIsTop(true);
     }
   };
-  window.addEventListener("scroll", changeNavbarColor);
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeNavbarColor);
+  }
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
@@ -89,100 +92,100 @@ function ResponsiveAppBar() {
 
   return (
     <Slide appear={false} direction="down" in={!trigger}>
-    <AppBar
-      position="sticky"
-      component="nav"
-      sx={{ backgroundColor: "#6c65ff" }}
-      elevation={isTop ? 0 : 4}
-      // color={trigger ? "#6c65ff" : "transparent"}
-    >
-      <CssBaseline />
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Adb sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleDrawerToggle}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-
-            <Drawer
-              // container={container}
-              variant="temporary"
-              open={mobileMenu}
-              onClose={handleDrawerToggle}
-              ModalProps={{
-                keepMounted: true, // Better open performance on mobile.
-              }}
+      <AppBar
+        position="sticky"
+        component="nav"
+        sx={{ backgroundColor: "#6c65ff" }}
+        elevation={isTop ? 0 : 4}
+        // color={trigger ? "#6c65ff" : "transparent"}
+      >
+        <CssBaseline />
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Adb sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
               sx={{
-                display: { xs: "block", md: "none" },
-                "& .MuiDrawer-paper": {
-                  boxSizing: "border-box",
-                  width: 220,
-                },
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
               }}
             >
-              {drawer}
-            </Drawer>
-          </Box>
+              LOGO
+            </Typography>
 
-          <Adb sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO.
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {routeOptions.map(({ label, href }) => (
-              <Link key={label} href={href}>
-                <Button
-                  onClick={handleDrawerToggle}
-                  sx={{ my: 2, color: "white", display: "block" }}
-                >
-                  {label}
-                </Button>
-              </Link>
-            ))}
-          </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleDrawerToggle}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
 
-          {/* <Box sx={{ flexGrow: 0 }}>
+              <Drawer
+                // container={container}
+                variant="temporary"
+                open={mobileMenu}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                  keepMounted: true, // Better open performance on mobile.
+                }}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                  "& .MuiDrawer-paper": {
+                    boxSizing: "border-box",
+                    width: 220,
+                  },
+                }}
+              >
+                {drawer}
+              </Drawer>
+            </Box>
+
+            <Adb sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              LOGO.
+            </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {routeOptions.map(({ label, href }) => (
+                <Link key={label} href={href}>
+                  <Button
+                    onClick={handleDrawerToggle}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                  >
+                    {label}
+                  </Button>
+                </Link>
+              ))}
+            </Box>
+
+            {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="user options">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar />
@@ -224,9 +227,9 @@ function ResponsiveAppBar() {
               ]}
             </Menu>
           </Box> */}
-        </Toolbar>
-      </Container>
-    </AppBar>
+          </Toolbar>
+        </Container>
+      </AppBar>
     </Slide>
   );
 }

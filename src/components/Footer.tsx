@@ -31,7 +31,7 @@ export const Footer = () => {
             ? theme.palette.grey[200]
             : theme.palette.grey[800],
         padding: theme.spacing(4, 2, 0, 2),
-        marginTop: 2,
+        // marginTop: 2,
         // position: "sticky",
         bottom: 0,
         width: "100%",

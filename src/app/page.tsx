@@ -1,3 +1,4 @@
+import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import HeroSection from "@/components/ui/Hero";
@@ -20,6 +21,7 @@ export default function Home() {
           </p>
         ))}
       </Container>
+      <ContactMe />
       <Footer />
     </main>
   );
