@@ -6,23 +6,25 @@ const CheckoutResume = () => {
     <Box>
       <Box
         sx={{
-          //   width: "100%",
           display: "flex",
           justifyContent: "center",
-            alignItems: "center",
+          alignItems: "center",
           backgroundImage: `url(${BannerImg.src})`,
           height: "200px",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        //   filter: "blur(8px)",
-        //   -webkit-filter: blur(8px);
+          // backgroundRepeat: "no-repeat",
+          // backgroundSize: "cover",
         }}
       >
-        <Box sx={{textAlign:"center"}}>
+        <Box sx={{ textAlign: "center" }}>
           <h1 style={{ color: "blue" }}>Checkout My Resume!</h1>
-          <Button variant="outlined" color="warning" size="large" sx={{mt:2}}>
+          <Button
+            variant="outlined"
+            color="warning"
+            size="large"
+            sx={{ mt: 2 }}
+          >
             Download a Copy of My Resume
           </Button>
         </Box>

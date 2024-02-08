@@ -6,9 +6,10 @@ const HeroSection = () => {
   return (
     <Grid
       container
-      sx={{ overflowX: "hidden", marginTop: "-3px" }}
+      sx={{ overflowX: "hidden", marginTop: "-50px" }}
       maxWidth={"xl"}
       mx={"auto"}
+      // bgcolor={"#6c65ff"}
     >
       <Grid
         item
@@ -20,6 +21,7 @@ const HeroSection = () => {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: { xs: "center", sm: "end" },
+          paddingTop: "50px",
         }}
         bgcolor={"#6c65ff"}
       >
@@ -34,7 +36,7 @@ const HeroSection = () => {
         xs={12}
         sm={6}
         zIndex="2"
-        sx={{ display: { xs: "none", sm: "block" } }}
+        sx={{ display: { xs: "none", sm: "block", paddingTop: "50px" } }}
         bgcolor={"#6c65ff"}
       >
         <Image

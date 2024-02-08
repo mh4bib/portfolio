@@ -2,8 +2,9 @@ import CheckoutResume from "@/components/CheckoutResume";
 import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/Navbar";
-import HeroSection from "@/components/ui/Hero";
+import HeroSection from "@/components/Hero";
 import { Container, CssBaseline } from "@mui/material";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <CssBaseline />
       <HeroSection />
       <Container maxWidth="lg">
-        {[...Array(10)].map((_, index) => (
+        <Projects/>
+        {/* {[...Array(5)].map((_, index) => (
           <p key={index}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
             harum distinctio mollitia necessitatibus! Praesentium, deserunt ea
@@ -20,7 +22,7 @@ export default function Home() {
             iure nulla perferendis velit laborum. Voluptatem, pariatur harum!
             Provident ipsam nam doloribus iste possimus.
           </p>
-        ))}
+        ))} */}
       </Container>
       <CheckoutResume />
       <ContactMe />
