@@ -9,3 +9,128 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.lgBtnContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lgBtnContainer a {
+  position: relative;
+  height: 50px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 50px;
+  margin: 10px;
+  text-transform: uppercase;
+  background: #191919;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  overflow: hidden;
+}
+
+.lgBtnContainer a span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: 0s ease-in;
+}
+
+.lgBtnContainer a:hover span {
+  transition: 0.4s ease-in;
+  transform: translateY(-100%);
+}
+
+.lgBtnContainer a:before {
+  content: "";
+  position: absolute;
+  bottom: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 250px;
+  background: #2299ff;
+  border-radius: 50%;
+  transition: 0.4s ease-in;
+}
+
+.lgBtnContainer a:hover:before {
+  bottom: -130px;
+}
+
+.smButtonContainer {
+  position: relative;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+
+.smButtonContainer a {
+  position: relative;
+  display: block;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  text-transform: uppercase;
+  background: #191919;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.smButtonContainer a span:nth-child(1) {
+  position: relative;
+  display: inline-block;
+  transform: translateX(-100%);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: 0s ease-in;
+}
+
+.smButtonContainer a span:nth-child(2) {
+  /* background: #db5252; */
+  position: relative;
+  display: inline-block;
+  transform: translateY(-100%);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: 0s ease-in;
+}
+
+.smButtonContainer a:hover span:nth-child(1) {
+  transition: 0.4s ease-in;
+  transform: translateX(0);
+}
+
+.smButtonContainer a:hover span:nth-child(2) {
+  transition: 0.4s ease-in;
+  transform: translate(100%, -100%);
+}
+
+.smButtonContainer a:before {
+  content: "";
+  /* background-image: url("../../public/send.png"); */
+  position: absolute;
+  bottom: -50px;
+  transform: translateX(-110%);
+  width: 300px;
+  height: 150px;
+  background: #2299ff;
+  border-radius: 50%;
+  transition: .6s ease-in;
+}
+
+.smButtonContainer a:hover:before {
+  transform: translateX(-10%);
+}

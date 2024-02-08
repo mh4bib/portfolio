@@ -19,14 +19,12 @@ const CheckoutResume = () => {
       >
         <Box sx={{ textAlign: "center" }}>
           <h1 style={{ color: "blue" }}>Checkout My Resume!</h1>
-          <Button
-            variant="outlined"
-            color="warning"
-            size="large"
-            sx={{ mt: 2 }}
-          >
-            Download a Copy of My Resume
-          </Button>
+          <div className="lgBtnContainer">
+            <a href="/resume.pdf" download>
+              <span>Download a Copy of My Resume</span>
+              <span>Download a Copy of My Resume</span>
+            </a>
+          </div>
         </Box>
       </Box>
     </Box>

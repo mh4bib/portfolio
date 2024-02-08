@@ -62,14 +62,15 @@ const ContactMe = () => {
             open. Whether you have a question or just want to say hi, I&apos;ll
             try my best to get back to you!
           </p>
-          <Button
-            variant="contained"
-            // endIcon={<SendRoundedIcon />}
-            // startIcon={<SendRoundedIcon />}
-            sx={{ mt: 2, mb: 12 }}
-          >
-            Say Hello
-          </Button>
+          <div className="smButtonContainer">
+            <a
+              href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
+              // sx={{ mt: 2, mb: 12 }}
+            >
+              <span>Say Hello</span>
+              <span>Say Hello</span>
+            </a>
+          </div>
         </Box>
       </Box>
     </Box>
