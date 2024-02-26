@@ -128,7 +128,7 @@ a {
   height: 150px;
   background: #2299ff;
   border-radius: 50%;
-  transition: .6s ease-in;
+  transition: 0.6s ease-in;
 }
 
 .smButtonContainer a:hover:before {
