@@ -6,6 +6,7 @@ import HeroSection from "@/components/Hero";
 import { Container, CssBaseline } from "@mui/material";
 import Projects from "@/components/Projects";
 import AboutMe from "@/components/AboutMe";
+import Blogs from "@/components/Blogs";
 
 export default function Home() {
   return (
@@ -14,19 +15,16 @@ export default function Home() {
       <CssBaseline />
       <HeroSection />
       <Container maxWidth="lg">
-        <Projects/>
-        <AboutMe/>
-        {/* {[...Array(5)].map((_, index) => (
-          <p key={index}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-            harum distinctio mollitia necessitatibus! Praesentium, deserunt ea
-            iste voluptates dolorem natus, non modi ab molestias magnam quod
-            iure nulla perferendis velit laborum. Voluptatem, pariatur harum!
-            Provident ipsam nam doloribus iste possimus.
-          </p>
-        ))} */}
+        <Projects />
+        <AboutMe />
       </Container>
+
       <CheckoutResume />
+
+      <Container maxWidth="md">
+        <Blogs />
+      </Container>
+
       <ContactMe />
       <Footer />
     </main>

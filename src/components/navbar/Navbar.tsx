@@ -95,9 +95,10 @@ function ResponsiveAppBar() {
       <AppBar
         position="sticky"
         component="nav"
-        sx={{ backgroundColor: "#6c65ff" }}
+        sx={{ backgroundColor: isTop ? "transparent" : "#1B4242" }}
+        // color="transparent"
+        // color="transparent"
         elevation={isTop ? 0 : 4}
-        // color={trigger ? "#6c65ff" : "transparent"}
       >
         <CssBaseline />
         <Container maxWidth="xl">

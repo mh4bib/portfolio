@@ -1,7 +1,6 @@
 "use client";
 
 import { Grid, Typography, Tooltip, Stack } from "@mui/material";
-import gsap from "gsap";
 import Image from "next/image";
 import sampleIcon from "@/assets/send.png";
 import styles from "./aboutme.module.css";

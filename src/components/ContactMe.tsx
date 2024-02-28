@@ -53,6 +53,7 @@ const ContactMe = () => {
             width: { xs: "100%", sm: "70%", md: "700px" },
             textAlign: "center",
             mx: 2,
+            // paddingBottom: 4,
           }}
           // bgcolor={"blueviolet"}
         >
@@ -62,7 +63,7 @@ const ContactMe = () => {
             open. Whether you have a question or just want to say hi, I&apos;ll
             try my best to get back to you!
           </p>
-          <div className="smButtonContainer">
+          <div className="smButtonContainer" style={{ margin: "30px 0" }}>
             <a
               href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
               // sx={{ mt: 2, mb: 12 }}
