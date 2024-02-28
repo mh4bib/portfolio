@@ -1,14 +1,7 @@
 "use client";
 
 import theme from "@/theme/theme";
-import {
-  Box,
-  Divider,
-  Grid,
-  Stack,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Divider, Grid, Stack, Typography, styled } from "@mui/material";
 
 import { Facebook, YouTube, LinkedIn } from "@mui/icons-material";
 import Link from "next/link";
@@ -26,10 +19,11 @@ export const Footer = () => {
     <Box
       component={"footer"}
       sx={{
-        backgroundColor:
-          theme.palette.mode === "light"
-            ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+        backgroundColor: "#1B4242",
+        // backgroundColor:
+        //   theme.palette.mode === "light"
+        //     ? theme.palette.grey[200]
+        //     : theme.palette.grey[800],
         padding: theme.spacing(4, 2, 0, 2),
         // marginTop: 2,
         // position: "sticky",

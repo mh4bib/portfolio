@@ -1,8 +1,10 @@
-import { Box, Grid, SvgIcon } from "@mui/material";
+"use client";
+
+import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import sampleCover from "@/assets/sampleCoverImg.png";
 import heroCover from "../../public/images/hero-cover.svg";
 import bgVector from "../../public/images/bg-vector.svg";
+import { Typewriter } from "react-simple-typewriter";
 
 const HeroSection = () => {
   return (
@@ -44,10 +46,42 @@ const HeroSection = () => {
             style={{ width: "70%", height: "auto", marginBottom: "-20px" }}
           />
         </Box>
-        <Box /*  bgcolor={"darkgrey"} */>
-          <h1>Hi</h1>
-          <h1>I&apos;m Jack</h1>
-          <h1>A Lorem ipsum dolor sit dolor</h1>
+        <Box>
+          <Typography
+            variant="h2"
+            textAlign={{ xs: "center", sm: "start" }}
+            sx={{
+              color: "#1B4242",
+              textShadow:
+                "-1px 1px 2px #ADC8CC, 1px 1px 2px #ADC8CC, 1px -1px 0 #ADC8CC, -1px -1px 0 white",
+            }}
+          >
+            Hi <br />
+            I&apos;m Habib
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            textAlign={{ xs: "center", sm: "start" }}
+            sx={{
+              width: { xs: "245px", sm: "305px", md: "365px" },
+              fontSize: { xs: "20px", sm: "25px", md: "30px" },
+            }}
+          >
+            A
+            <Typewriter
+              words={[
+                " Full Stack Developer",
+                " Backend Developer",
+                " MERN Stack Developer",
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={100}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </Typography>
         </Box>
       </Grid>
       <Grid

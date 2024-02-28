@@ -6,7 +6,7 @@ const ContactMe = () => {
   return (
     <Box sx={{ overflowX: "hidden" }}>
       <Box
-        bgcolor={"greenyellow"}
+        bgcolor={"#5C8374"}
         // width={"200%"}
         height={"150px"}
         marginLeft={"-80px"}
@@ -24,7 +24,7 @@ const ContactMe = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="icon icon-tabler icon-tabler-mail-fast"
+              className="icon icon-tabler icon-tabler-mail-fast icon-shake"
               width={24}
               height={24}
               viewBox="0 0 24 24"
@@ -46,7 +46,7 @@ const ContactMe = () => {
 
       <Box
         sx={{ display: "flex", justifyContent: "center" }}
-        bgcolor={"greenyellow"}
+        bgcolor={"#5C8374"}
       >
         <Box
           sx={{

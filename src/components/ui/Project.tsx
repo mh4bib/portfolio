@@ -14,9 +14,8 @@ import Image from "next/image";
 import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-// import { Directions } from "@mui/icons-material";
 
-const Project = ({index}:{index:number}) => {
+const Project = ({ index }: { index: number }) => {
   // const indx = 2;
   const isOdd = index % 2 !== 0;
   return (
@@ -74,7 +73,7 @@ const Project = ({index}:{index:number}) => {
           Dino HR
         </Typography>
 
-        <Box sx={{ mb: 1, bgcolor: "greenyellow", borderRadius: "10px", p: 2 }}>
+        <Box sx={{ mb: 1, bgcolor: "#1B4242", borderRadius: "10px", p: 2 }}>
           <Typography textAlign={"justify"}>
             Dino Hr is a human resources management application that allows
             users to manage their employees, departments, and roles. It is

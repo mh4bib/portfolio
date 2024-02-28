@@ -68,7 +68,6 @@ a {
 .smButtonContainer {
   position: relative;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
 }
 
@@ -79,12 +78,13 @@ a {
   text-align: center;
   line-height: 40px;
   text-transform: uppercase;
-  background: #191919;
+  background: #092635;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .smButtonContainer a span:nth-child(1) {
@@ -126,11 +126,33 @@ a {
   transform: translateX(-110%);
   width: 300px;
   height: 150px;
-  background: #2299ff;
+  background: #9ec8b9;
   border-radius: 50%;
   transition: 0.6s ease-in;
 }
 
 .smButtonContainer a:hover:before {
   transform: translateX(-10%);
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.icon-shake {
+  animation: shake 3s ease-out infinite;
 }

@@ -27,7 +27,7 @@ const Blogs = () => {
             container
             xs={12}
             sx={{
-              backgroundColor: "lightgray",
+              backgroundColor: "#1B4242",
               borderRadius: 2,
               position: "sticky",
               boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
