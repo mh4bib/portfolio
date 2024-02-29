@@ -1,22 +1,16 @@
-import Dino from "@/assets/dino-mockups.png";
 import {
   Box,
-  Divider,
   Grid,
   IconButton,
-  Paper,
   Stack,
   Tooltip,
   Typography,
-  styled,
 } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
-const Project = ({ index }: { index: number }) => {
-  // const indx = 2;
+const Project = ({ index, project }: { index: number; project: any }) => {
   const isOdd = index % 2 !== 0;
   return (
     <Grid
@@ -40,18 +34,22 @@ const Project = ({ index }: { index: number }) => {
             fontFamily: "Ubuntu",
           }}
         >
-          Dino HR
+          {project?.title}
         </Typography>
-        <Image
-          src={Dino}
-          alt="Dino Mockups"
-          height={0}
-          width={0}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-        />
+        <a href="https://dino-hr.vercel.app/" target="_blank">
+          <Image
+            src={project?.coverImg}
+            alt="Cover img"
+            height={0}
+            width={0}
+            className="projectImg"
+            style={{
+              width: "100%",
+              height: "auto",
+              borderRadius: "10px",
+            }}
+          />
+        </a>
       </Grid>
       <Grid
         item
@@ -72,23 +70,14 @@ const Project = ({ index }: { index: number }) => {
             fontFamily: "Ubuntu",
           }}
         >
-          Dino HR
+          {project?.title}
         </Typography>
 
         <Box sx={{ mb: 1, bgcolor: "#1B4242", borderRadius: "10px", p: 2 }}>
-          <Typography textAlign={"justify"}>
-            Dino Hr is a human resources management application that allows
-            users to manage their employees, departments, and roles. It is
-            designed to be a simple and easy to use application that allows
-            users to quickly view and manage their employees. users to manage
-            their employees, departments, and roles. It is designed to be a
-            simple and easy to use application that allows users to quickly view
-            and manage their employees.
-          </Typography>
+          <Typography textAlign={"justify"}>{project?.description}</Typography>
         </Box>
         <Stack
           direction="row"
-          // divider={<Divider orientation="vertical" flexItem />}
           useFlexGap
           flexWrap="wrap"
           spacing={2}
@@ -98,34 +87,31 @@ const Project = ({ index }: { index: number }) => {
             fontFamily: "cursive",
           }}
         >
-          <Link href={"/"}>React</Link>
-          <Link href={"/"}>Node</Link>
-          <Link href={"/"}>Express</Link>
-          <Link href={"/"}>MySQL</Link>
-          <Link href={"/"}>Sequelize</Link>
-          <Link href={"/"}>MUI</Link>
+          {project?.techStack?.map((ts: string, index: number) => (
+            <span key={index}>{ts}</span>
+          ))}
         </Stack>
         <Box>
           <Tooltip title="Client Side Repository">
-            <Link href={"https://github.com/meraj2085/dino-hr"}>
+            <a href={project?.frontendRepo} target="_blank">
               <IconButton>
                 <GitHubIcon />
               </IconButton>
-            </Link>
+            </a>
           </Tooltip>
           <Tooltip title="Server Side Repository">
-            <Link href={"https://github.com/meraj2085/dino-backend"}>
+            <a href={project?.backendRepo} target="_blank">
               <IconButton>
                 <GitHubIcon />
               </IconButton>
-            </Link>
+            </a>
           </Tooltip>
           <Tooltip title="Live Project">
-            <Link href={"https://dino-hr.vercel.app/"}>
+            <a href={project?.liveSite} target="_blank">
               <IconButton>
                 <OpenInNewIcon />
               </IconButton>
-            </Link>
+            </a>
           </Tooltip>
         </Box>
       </Grid>

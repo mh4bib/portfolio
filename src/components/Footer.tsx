@@ -9,6 +9,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import XIcon from "../../public/images/brand-x.svg";
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "../../public/images/personal-logo.svg";
 
 const Item = styled("a")(({ theme }) => ({
   //   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -31,33 +32,13 @@ export const Footer = () => {
     >
       <Grid container item textAlign="center">
         <Grid item xs={12}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              // textAlign: "center",
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-              fontSize: "1.5rem",
-              // display: "flex",
-              // justifyContent: "center",
-              // alignItems: "center",
-            }}
+          <Image src={Logo} alt="logo" width={50} height={50} />
+          <Stack
+            direction="row"
+            spacing={{ xs: 2, md: 5 }}
+            justifyContent="center"
+            mt={2}
           >
-            {/* <Code
-              sx={{
-                // fontSize: "30px",
-                mr: 1,
-              }}
-            /> */}
-            &lt;MH/&gt;
-          </Typography>
-          <Stack direction="row" spacing={{xs:2, md: 5}} justifyContent="center" mt={2}>
             <Item href="#projects">Projects</Item>
             <Item href="#about-me">About Me</Item>
             <Item href="#blogs">Blogs</Item>

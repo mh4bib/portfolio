@@ -26,6 +26,8 @@ import {
 } from "@mui/material";
 import { Code, Menu as MenuIcon } from "@mui/icons-material";
 import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../../public/images/personal-logo.svg";
 
 const routeOptions: { label: string; href: string }[] = [
   { label: "Projects", href: "#projects" },
@@ -73,25 +75,15 @@ function ResponsiveAppBar() {
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        <Typography
-          variant="h6"
-          noWrap
-          component="a"
-          href="/"
-          sx={{
-            // mr: 2,
-            // display: { xs: "none", md: "flex" },
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          &lt;MH/&gt;
-        </Typography>
-      </Typography>
+      <Link href={"/"}>
+        <Image
+          src={Logo}
+          style={{ marginTop: "8px" }}
+          alt="logo"
+          width={30}
+          height={30}
+        />
+      </Link>
       <Divider />
       <List onClick={handleDrawerToggle}>
         {routeOptions.map(({ label, href }) => (
@@ -118,30 +110,11 @@ function ResponsiveAppBar() {
         <CssBaseline />
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            {/* <Code
-              sx={{
-                display: { xs: "none", md: "flex", fontSize: "30px" },
-                mr: 1,
-              }}
-            /> */}
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              &lt;MH/&gt;
-            </Typography>
-
+            <Box sx={{ display: { xs: "none", md: "flex" }, mr: 5 }}>
+              <Link href={"/"}>
+                <Image src={Logo} alt="logo" width={40} height={40} />
+              </Link>
+            </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -179,31 +152,11 @@ function ResponsiveAppBar() {
               </Drawer>
             </Box>
 
-            {/* <Code
-              sx={{
-                display: { xs: "flex", md: "none" },
-                mr: 1,
-                fontSize: "30px",
-              }}
-            /> */}
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              &lt;MH/&gt;
-            </Typography>
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <Link href={"/"}>
+                <Image src={Logo} alt="logo" width={40} height={40} />
+              </Link>
+            </Box>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {routeOptions.map(({ label, href }) => (
                 <Link key={label} href={href}>

@@ -67,10 +67,10 @@
 .logoImage {
   filter: grayscale(100%);
   opacity: 0.5;
+  transition: 0.2s;
 }
 
 .logoImage:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transition: 0.2s;
 }

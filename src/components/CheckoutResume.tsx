@@ -24,9 +24,12 @@ const CheckoutResume = () => {
             Checkout My Resume!
           </h1>
           <div className="lgBtnContainer">
-            <a href="/resume.pdf" download>
-              <span>Download a Copy of My Resume</span>
-              <span>Download a Copy of My Resume</span>
+            <a
+              href="https://drive.google.com/file/d/13UfWDwSqiheWzKGhBCyCgM6akxKn2TRx/view?usp=sharing"
+              target="_blank"
+            >
+              <span>Take a Copy of My Resume</span>
+              <span>Take a Copy of My Resume</span>
             </a>
           </div>
         </Box>

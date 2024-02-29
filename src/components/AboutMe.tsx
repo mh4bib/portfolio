@@ -50,6 +50,7 @@ const AboutMe = () => {
           <Typography
             variant="h4"
             textAlign={{ xs: "center", md: "start" }}
+            sx={{ fontFamily: "Ubuntu" }}
             mb={2}
             id="about-me"
           >
@@ -61,8 +62,8 @@ const AboutMe = () => {
             learning and mastering the ever-evolving world of web technologies.
             <br />
             <br />
-            My journey has equipped me with expertise in languages like C, C++,
-            JavaScript, TypeScript and frameworks like React.js, Next.js,
+            My journey has equipped me with expertise in languages like C++,
+            JavaScript, TypeScript, Java and frameworks like React.js, Next.js,
             Node.js, and databases like PostgreSQL, MongoDB. I&apos;m also
             exploring different architectures to broaden my skillset.
             <br />
@@ -76,6 +77,7 @@ const AboutMe = () => {
           <Typography
             align="center"
             variant="h4"
+            sx={{ fontFamily: "Ubuntu" }}
             mb={2}
             mt={{ xs: "60px", md: 0 }}
           >

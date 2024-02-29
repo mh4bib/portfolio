@@ -17,7 +17,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Ubuntu"
+  font-family: "Ubuntu";
 }
 
 .lgBtnContainer a {
@@ -82,7 +82,7 @@ a {
   text-align: center;
   line-height: 40px;
   text-transform: uppercase;
-  background: #1B4242;
+  background: #1b4242;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -139,6 +139,7 @@ a {
   transform: translateX(-10%);
 }
 
+/* send icon animation  */
 @keyframes shake {
   0% {
     transform: translateX(0);
@@ -159,4 +160,37 @@ a {
 
 .icon-shake {
   animation: shake 3s ease-out infinite;
+}
+
+/* project img  */
+.projectImg {
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.projectImg:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* scrollbar  */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #1b4242;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5c8374;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4b6b5f;
 }
