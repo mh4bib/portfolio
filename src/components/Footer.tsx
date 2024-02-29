@@ -57,7 +57,7 @@ export const Footer = () => {
             /> */}
             &lt;MH/&gt;
           </Typography>
-          <Stack direction="row" spacing={5} justifyContent="center" mt={2}>
+          <Stack direction="row" spacing={{xs:2, md: 5}} justifyContent="center" mt={2}>
             <Item href="#projects">Projects</Item>
             <Item href="#about-me">About Me</Item>
             <Item href="#blogs">Blogs</Item>

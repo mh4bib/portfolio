@@ -23,13 +23,21 @@ import MongoDB from "../../public/images/mongodb-icon-seeklogo.svg";
 
 import GIT from "../../public/images/git-seeklogo.svg";
 import GitHub from "../../public/images/github-seeklogo.svg";
-import PostMan from "../../public/images/postman-seeklogo.svg";
+import PostMan from "../../public/images/postman-logo.png";
 import VSCode from "../../public/images/visual-studio-code-seeklogo.svg";
 
 const Logo = ({ tt, src, alt }: { tt: string; src: any; alt?: string }) => {
   return (
     <Tooltip title={tt} className={styles.logoImage}>
-      <Image src={src} alt={alt || "Logo"} />
+      <Image
+        src={src}
+        alt={alt || "Logo"}
+        style={{
+          backgroundColor: "white",
+          padding: "5px",
+          borderRadius: "5px",
+        }}
+      />
     </Tooltip>
   );
 };

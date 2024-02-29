@@ -74,7 +74,23 @@ function ResponsiveAppBar() {
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="/"
+          sx={{
+            // mr: 2,
+            // display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          &lt;MH/&gt;
+        </Typography>
       </Typography>
       <Divider />
       <List onClick={handleDrawerToggle}>
@@ -139,7 +155,11 @@ function ResponsiveAppBar() {
               </IconButton>
 
               <Drawer
-                // container={container}
+                PaperProps={{
+                  sx: {
+                    backgroundColor: "#1B4242",
+                  },
+                }}
                 variant="temporary"
                 open={mobileMenu}
                 onClose={handleDrawerToggle}
