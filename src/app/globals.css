@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -15,17 +17,19 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Ubuntu"
 }
 
 .lgBtnContainer a {
   position: relative;
   height: 50px;
+  border-radius: 25px;
   padding: 0 20px;
   text-align: center;
   line-height: 50px;
   margin: 10px;
   text-transform: uppercase;
-  background: #191919;
+  background: #1b4242;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
@@ -56,7 +60,7 @@ a {
   transform: translateX(-50%);
   width: 480px;
   height: 250px;
-  background: #2299ff;
+  background: #9ec8b9;
   border-radius: 50%;
   transition: 0.4s ease-in;
 }
@@ -78,7 +82,7 @@ a {
   text-align: center;
   line-height: 40px;
   text-transform: uppercase;
-  background: #092635;
+  background: #1B4242;
   color: #fff;
   font-size: 18px;
   font-weight: 500;

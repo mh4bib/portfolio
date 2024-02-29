@@ -37,6 +37,7 @@ const Project = ({ index }: { index: number }) => {
             fontWeight: "bold",
             mb: 1,
             display: { xs: "block", md: "none" },
+            fontFamily: "Ubuntu",
           }}
         >
           Dino HR
@@ -68,6 +69,7 @@ const Project = ({ index }: { index: number }) => {
             fontWeight: "bold",
             mb: 2,
             display: { xs: "none", md: "block" },
+            fontFamily: "Ubuntu",
           }}
         >
           Dino HR

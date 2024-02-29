@@ -24,13 +24,14 @@ import {
   useScrollTrigger,
   Slide,
 } from "@mui/material";
-import { Adb, Menu as MenuIcon } from "@mui/icons-material";
+import { Code, Menu as MenuIcon } from "@mui/icons-material";
 import Link from "next/link";
 
 const routeOptions: { label: string; href: string }[] = [
-  { label: "Products", href: "/product" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
+  { label: "Projects", href: "#projects" },
+  { label: "About Me", href: "#about-me" },
+  { label: "Blogs", href: "#blogs" },
+  { label: "Contacts", href: "#contact-me" },
 ];
 const userOptions: { label: string; href: string }[] = [
   { label: "Profile", href: "/profile" },
@@ -96,19 +97,22 @@ function ResponsiveAppBar() {
         position="sticky"
         component="nav"
         sx={{ backgroundColor: isTop ? "transparent" : "#1B4242" }}
-        // color="transparent"
-        // color="transparent"
         elevation={isTop ? 0 : 4}
       >
         <CssBaseline />
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Adb sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            {/* <Code
+              sx={{
+                display: { xs: "none", md: "flex", fontSize: "30px" },
+                mr: 1,
+              }}
+            /> */}
             <Typography
               variant="h6"
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -119,7 +123,7 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             >
-              LOGO
+              &lt;MH/&gt;
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -139,6 +143,7 @@ function ResponsiveAppBar() {
                 variant="temporary"
                 open={mobileMenu}
                 onClose={handleDrawerToggle}
+                disableScrollLock={true}
                 ModalProps={{
                   keepMounted: true, // Better open performance on mobile.
                 }}
@@ -154,7 +159,13 @@ function ResponsiveAppBar() {
               </Drawer>
             </Box>
 
-            <Adb sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            {/* <Code
+              sx={{
+                display: { xs: "flex", md: "none" },
+                mr: 1,
+                fontSize: "30px",
+              }}
+            /> */}
             <Typography
               variant="h5"
               noWrap
@@ -171,7 +182,7 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             >
-              LOGO.
+              &lt;MH/&gt;
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {routeOptions.map(({ label, href }) => (

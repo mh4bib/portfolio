@@ -2,7 +2,6 @@
 
 import { Grid, Typography, Tooltip, Stack } from "@mui/material";
 import Image from "next/image";
-import sampleIcon from "@/assets/send.png";
 import styles from "./aboutme.module.css";
 import cppIcon from "../../public/images/cpp-logo.svg";
 import TSIcon from "../../public/images/typescript-logo.svg";
@@ -38,10 +37,17 @@ const Logo = ({ tt, src, alt }: { tt: string; src: any; alt?: string }) => {
 const AboutMe = () => {
   return (
     <div>
-      <Grid container>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h4">About Me</Typography>
-          <Typography>
+      <Grid container sx={{ mt: "70px" }}>
+        <Grid item xs={12} md={6} paddingRight={{ xs: 0, md: 3 }}>
+          <Typography
+            variant="h4"
+            textAlign={{ xs: "center", md: "start" }}
+            mb={2}
+            id="about-me"
+          >
+            About Me
+          </Typography>
+          <Typography textAlign={"justify"}>
             Hi, I&apos;m Mahiuddin Habib, a Computer Science and Engineering
             student driven by a passion for web development. I&apos;m constantly
             learning and mastering the ever-evolving world of web technologies.
@@ -58,8 +64,13 @@ const AboutMe = () => {
             your ideas to life.
           </Typography>
         </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography align="center" variant="h4">
+        <Grid item xs={12} md={6} paddingLeft={{ xs: 0, md: 3 }} mb={2}>
+          <Typography
+            align="center"
+            variant="h4"
+            mb={2}
+            mt={{ xs: "60px", md: 0 }}
+          >
             Skills
           </Typography>
           <div className={styles.logos}>

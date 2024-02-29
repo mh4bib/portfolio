@@ -4,7 +4,7 @@ import SendRoundedIcon from "@mui/icons-material/SendRounded";
 
 const ContactMe = () => {
   return (
-    <Box sx={{ overflowX: "hidden" }}>
+    <Box id="contact-me" sx={{ overflowX: "hidden" }}>
       <Box
         bgcolor={"#5C8374"}
         // width={"200%"}
@@ -57,13 +57,22 @@ const ContactMe = () => {
           }}
           // bgcolor={"blueviolet"}
         >
-          <h1>Get In Touch!</h1>
+          <h1
+            style={{
+              fontFamily: "Ubuntu",
+            }}
+          >
+            Get In Touch!
+          </h1>
           <p>
             I&apos;m currently looking for new opportunities, my inbox is always
             open. Whether you have a question or just want to say hi, I&apos;ll
             try my best to get back to you!
           </p>
-          <div className="smButtonContainer" style={{ margin: "30px 0" }}>
+          <div
+            className="smButtonContainer"
+            style={{ margin: "30px 0", fontFamily: "Ubuntu" }}
+          >
             <a
               href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
               // sx={{ mt: 2, mb: 12 }}

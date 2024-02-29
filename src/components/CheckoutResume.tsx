@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import BannerImg from "@/assets/banner.jpg";
+import Bg from "@/assets/bg.jpg";
 
 const CheckoutResume = () => {
   return (
@@ -9,8 +9,8 @@ const CheckoutResume = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundImage: `url(${BannerImg.src})`,
-          height: "200px",
+          backgroundImage: `url(${Bg.src})`,
+          height: "270px",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
           // backgroundRepeat: "no-repeat",
@@ -18,7 +18,11 @@ const CheckoutResume = () => {
         }}
       >
         <Box sx={{ textAlign: "center" }}>
-          <h1 style={{ color: "blue" }}>Checkout My Resume!</h1>
+          <h1
+            style={{ color: "#CFE4DC", fontFamily: "Ubuntu", fontSize: "40px" }}
+          >
+            Checkout My Resume!
+          </h1>
           <div className="lgBtnContainer">
             <a href="/resume.pdf" download>
               <span>Download a Copy of My Resume</span>

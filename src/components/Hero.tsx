@@ -52,8 +52,10 @@ const HeroSection = () => {
             textAlign={{ xs: "center", sm: "start" }}
             sx={{
               color: "#1B4242",
+              fontWeight: "500",
               textShadow:
                 "-1px 1px 2px #ADC8CC, 1px 1px 2px #ADC8CC, 1px -1px 0 #ADC8CC, -1px -1px 0 white",
+              fontFamily: "Ubuntu",
             }}
           >
             Hi <br />
@@ -65,6 +67,7 @@ const HeroSection = () => {
             sx={{
               width: { xs: "245px", sm: "305px", md: "365px" },
               fontSize: { xs: "20px", sm: "25px", md: "30px" },
+              fontFamily: "Ubuntu",
             }}
           >
             A
