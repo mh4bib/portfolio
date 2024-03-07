@@ -1,6 +1,6 @@
+"use client";
+
 import { Box, Button, SvgIcon } from "@mui/material";
-import SendRoundedIcon from "@mui/icons-material/SendRounded";
-// import  MailFastIcon as React.Component from "@/assets/MailFastIcon.svg";
 
 const ContactMe = () => {
   return (
@@ -69,17 +69,22 @@ const ContactMe = () => {
             open. Whether you have a question or just want to say hi, I&apos;ll
             try my best to get back to you!
           </p>
-          <div
-            className="smButtonContainer"
-            style={{ margin: "30px 0", fontFamily: "Ubuntu" }}
-          >
-            <a
-              href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
-              // sx={{ mt: 2, mb: 12 }}
+          <div>
+            <div
+              className="smButtonContainer"
+              style={{ margin: "30px 0", fontFamily: "Ubuntu" }}
             >
-              <span>Say Hello</span>
-              <span>Say Hello</span>
-            </a>
+              <a
+                // href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
+                onClick={() => {
+                  console.log("clicked");
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                <span>Say Hello</span>
+                <span>Say Hello</span>
+              </a>
+            </div>
           </div>
         </Box>
       </Box>
