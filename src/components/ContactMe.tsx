@@ -1,8 +1,28 @@
 "use client";
 
 import { Box, Button, SvgIcon } from "@mui/material";
+import { useState } from "react";
 
 const ContactMe = () => {
+  const [contacts, setContacts] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const sendMail = (e) => {
+    e.preventDefault();
+    //  if (contacts.name === "" || contacts.email === "" || contacts.message === "") {
+    //   alert("Please fill all the fields");
+    //   return;
+    // }
+
+    setContacts({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
   return (
     <Box id="contact-me" sx={{ overflowX: "hidden" }}>
       <Box
@@ -70,6 +90,85 @@ const ContactMe = () => {
             try my best to get back to you!
           </p>
           <div>
+            <div>
+              <form onSubmit={sendMail}>
+                <input
+                  onChange={(e) => {
+                    setContacts({ ...contacts, name: e.target.value });
+                  }}
+                  type="text"
+                  required
+                  placeholder="Name"
+                  value={contacts.name}
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    borderRadius: "5px",
+                    border: "none",
+                  }}
+                />
+                <input
+                  onChange={(e) => {
+                    setContacts({ ...contacts, email: e.target.value });
+                  }}
+                  type="email"
+                  required
+                  placeholder="Email"
+                  value={contacts.email}
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    borderRadius: "5px",
+                    border: "none",
+                  }}
+                />
+                <textarea
+                  onChange={(e) => {
+                    setContacts({ ...contacts, message: e.target.value });
+                  }}
+                  required
+                  placeholder="Message"
+                  value={contacts.message}
+                  style={{
+                    width: "100%",
+                    padding: "10px",
+                    margin: "10px 0",
+                    borderRadius: "5px",
+                    border: "none",
+                  }}
+                ></textarea>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <button
+                    type="submit"
+                    className="smButtonContainer"
+                    style={{
+                      margin: "30px 0",
+                      fontFamily: "Ubuntu",
+                      backgroundColor: "inherit",
+                      border: "none",
+                    }}
+                  >
+                    <a
+                      // href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
+                      // onClick={sendMail}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <span>Send Mail</span>
+                      <span>Send Mail</span>
+                    </a>
+                  </button>
+                </div>
+              </form>
+            </div>
             <div
               className="smButtonContainer"
               style={{ margin: "30px 0", fontFamily: "Ubuntu" }}
