@@ -1,6 +1,7 @@
 "use client";
 
-import { Box, Button, SvgIcon } from "@mui/material";
+import { Box, Snackbar, SvgIcon } from "@mui/material";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 const ContactMe = () => {
@@ -10,13 +11,27 @@ const ContactMe = () => {
     message: "",
   });
   const [clicked, setClicked] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [failedOpen, setFailedOpen] = useState(false);
 
-  const sendMail = (e:any) => {
+  const sendMail = (e: any) => {
     e.preventDefault();
-    //  if (contacts.name === "" || contacts.email === "" || contacts.message === "") {
-    //   alert("Please fill all the fields");
-    //   return;
-    // }
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        e.target,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string
+      )
+      .then(
+        (result) => {
+          setSuccessOpen(true);
+        },
+        (error) => {
+          setFailedOpen(true);
+        }
+      );
 
     setContacts({
       name: "",
@@ -95,7 +110,7 @@ const ContactMe = () => {
             <div
               style={{
                 display: `${clicked ? "block" : "none"}`,
-                marginTop:"15px"
+                marginTop: "15px",
               }}
             >
               <form onSubmit={sendMail}>
@@ -104,6 +119,7 @@ const ContactMe = () => {
                     setContacts({ ...contacts, name: e.target.value });
                   }}
                   type="text"
+                  name="from_name"
                   required
                   placeholder="Name"
                   value={contacts.name}
@@ -120,6 +136,7 @@ const ContactMe = () => {
                     setContacts({ ...contacts, email: e.target.value });
                   }}
                   type="email"
+                  name="from_email"
                   required
                   placeholder="Email"
                   value={contacts.email}
@@ -136,6 +153,7 @@ const ContactMe = () => {
                     setContacts({ ...contacts, message: e.target.value });
                   }}
                   required
+                  name="message"
                   placeholder="Message"
                   value={contacts.message}
                   style={{
@@ -164,9 +182,7 @@ const ContactMe = () => {
                       border: "none",
                     }}
                   >
-                    <a
-                      style={{ cursor: "pointer" }}
-                    >
+                    <a style={{ cursor: "pointer" }}>
                       <span>Send Mail</span>
                       <span>Send Mail</span>
                     </a>
@@ -190,15 +206,37 @@ const ContactMe = () => {
                   border: "none",
                 }}
               >
-                <a
-                  style={{ cursor: "pointer" }}
-                >
+                <a style={{ cursor: "pointer" }}>
                   <span>Say Hello</span>
                   <span>Say Hello</span>
                 </a>
               </button>
             </div>
           </div>
+          <Snackbar
+            open={successOpen}
+            autoHideDuration={3000}
+            message="Email Sent Successfully"
+            onClose={() => setSuccessOpen(false)}
+            ContentProps={{
+              sx: {
+                background: "#22bb33",
+                color:"white"
+              },
+            }}
+          />
+          <Snackbar
+            open={failedOpen}
+            autoHideDuration={3000}
+            message="Unable to Send Email"
+            onClose={() => setFailedOpen(false)}
+            ContentProps={{
+              sx: {
+                background: "#bb2124",
+                color:"white"
+              },
+            }}
+          />
         </Box>
       </Box>
     </Box>
