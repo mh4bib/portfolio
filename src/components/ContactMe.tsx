@@ -9,8 +9,9 @@ const ContactMe = () => {
     email: "",
     message: "",
   });
+  const [clicked, setClicked] = useState(false);
 
-  const sendMail = (e) => {
+  const sendMail = (e:any) => {
     e.preventDefault();
     //  if (contacts.name === "" || contacts.email === "" || contacts.message === "") {
     //   alert("Please fill all the fields");
@@ -22,6 +23,7 @@ const ContactMe = () => {
       email: "",
       message: "",
     });
+    setClicked(false);
   };
   return (
     <Box id="contact-me" sx={{ overflowX: "hidden" }}>
@@ -90,7 +92,12 @@ const ContactMe = () => {
             try my best to get back to you!
           </p>
           <div>
-            <div>
+            <div
+              style={{
+                display: `${clicked ? "block" : "none"}`,
+                marginTop:"15px"
+              }}
+            >
               <form onSubmit={sendMail}>
                 <input
                   onChange={(e) => {
@@ -134,7 +141,7 @@ const ContactMe = () => {
                   style={{
                     width: "100%",
                     padding: "10px",
-                    margin: "10px 0",
+                    marginTop: "10px",
                     borderRadius: "5px",
                     border: "none",
                   }}
@@ -158,8 +165,6 @@ const ContactMe = () => {
                     }}
                   >
                     <a
-                      // href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
-                      // onClick={sendMail}
                       style={{ cursor: "pointer" }}
                     >
                       <span>Send Mail</span>
@@ -170,19 +175,28 @@ const ContactMe = () => {
               </form>
             </div>
             <div
-              className="smButtonContainer"
-              style={{ margin: "30px 0", fontFamily: "Ubuntu" }}
+              style={{
+                display: `${clicked ? "none" : "flex"}`,
+                justifyContent: "center",
+              }}
             >
-              <a
-                // href="mailto: mh.habib137@gmail.com?subject=👋 Hello from Your Portfolio!&body=Hello Habib,"
-                onClick={() => {
-                  console.log("clicked");
+              <button
+                onClick={() => setClicked(true)}
+                className="smButtonContainer"
+                style={{
+                  margin: "30px 0",
+                  fontFamily: "Ubuntu",
+                  backgroundColor: "inherit",
+                  border: "none",
                 }}
-                style={{ cursor: "pointer" }}
               >
-                <span>Say Hello</span>
-                <span>Say Hello</span>
-              </a>
+                <a
+                  style={{ cursor: "pointer" }}
+                >
+                  <span>Say Hello</span>
+                  <span>Say Hello</span>
+                </a>
+              </button>
             </div>
           </div>
         </Box>
