@@ -36,7 +36,7 @@ const Project = ({ index, project }: { index: number; project: any }) => {
         >
           {project?.title}
         </Typography>
-        <a href="https://dino-hr.vercel.app/" target="_blank">
+        <a href={project?.liveSite} target="_blank">
           <Image
             src={project?.coverImg}
             alt="Cover img"

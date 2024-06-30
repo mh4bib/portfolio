@@ -27,9 +27,11 @@ const ContactMe = () => {
       .then(
         (result) => {
           setSuccessOpen(true);
+          console.log(result);
         },
         (error) => {
           setFailedOpen(true);
+          console.log(error);
         }
       );
 
