@@ -7,6 +7,8 @@ import { Container, CssBaseline } from "@mui/material";
 import Projects from "@/components/Projects";
 import AboutMe from "@/components/AboutMe";
 import Blogs from "@/components/Blogs";
+import FeedbackDialog from "@/components/FeedbackDialog";
+import PublicFeedback from "@/components/PublicFeedback";
 
 export default function Home() {
   return (
@@ -26,6 +28,7 @@ export default function Home() {
       </Container>
 
       <ContactMe />
+      <PublicFeedback />
       <Footer />
     </main>
   );

@@ -10,6 +10,9 @@ const roboto = Roboto({
 const theme = createTheme({
   palette: {
     mode: "dark",
+    primary: {
+      main: "#e4eeeb",
+    },
     background: {
       default: "#092635",
       paper: "#9EC8B9",

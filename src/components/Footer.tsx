@@ -60,16 +60,16 @@ export const Footer = () => {
             mt={2}
             color={"white"}
           >
-            <Link href={"https://www.linkedin.com/in/mahiuddin-habib"}>
+            <Link href={"https://www.linkedin.com/in/mh4bib"}>
               <LinkedInIcon style={{ fontSize: 30 }} />
             </Link>
-            <Link href={"https://github.com/mahiuddinhabib"}>
+            <Link href={"https://github.com/mh4bib"}>
               <GitHubIcon style={{ fontSize: 30 }} />
             </Link>
-            <Link href={"https://twitter.com/m_habib37"}>
+            <Link href={"https://x.com/mh4bib"}>
               <Image src={XIcon} width={30} alt="x icon" />
             </Link>
-            <Link href={"https://www.facebook.com/m.habib137"}>
+            <Link href={"https://facebook.com/mh4bib"}>
               <FacebookIcon style={{ fontSize: 30 }} />
             </Link>
           </Stack>
@@ -83,7 +83,7 @@ export const Footer = () => {
             my={1}
           >
             {"Copyright © "}
-            <Link color="inherit" href="https://mahiuddin-habib.vercel.app/">
+            <Link color="inherit" href="https://mh4bib.vercel.app/">
               Mahiuddin Habib
             </Link>{" "}
             {new Date().getFullYear()}
