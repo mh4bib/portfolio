@@ -1,11 +1,11 @@
 import { Pool } from "pg";
 
 const pool = new Pool({
-  user: "neondb_owner",
-  host: "ep-winter-meadow-a1rl5fyt.ap-southeast-1.aws.neon.tech",
-  database: "portfolio",
-  password: "wKjitN0ag6eO",
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
+  port: parseInt(process.env.DB_PORT as string),
   ssl: {
     rejectUnauthorized: false,
   },
