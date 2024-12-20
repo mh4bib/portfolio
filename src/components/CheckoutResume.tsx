@@ -25,7 +25,7 @@ const CheckoutResume = () => {
           </h1>
           <div className="lgBtnContainer">
             <a
-              href="https://drive.google.com/file/d/13UfWDwSqiheWzKGhBCyCgM6akxKn2TRx/view?usp=sharing"
+              href="https://drive.google.com/file/d/13UfWDwSqiheWzKGhBCyCgM6akxKn2TRx/view"
               target="_blank"
             >
               <span>Take a Copy of My Resume</span>
